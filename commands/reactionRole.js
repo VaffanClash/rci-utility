@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client;
 
 module.exports = {
-    name: 'reactionRole',
-    description: 'Sets up a reaction role message',
+    name: 'reactionrole',
     async execute(message) {
         const channel = message.channel.id;
 
@@ -18,11 +17,12 @@ module.exports = {
         .setTitle('Scegli i tuoi ruoli')
         .setDescription('Cliccando la reazione potrai venir taggato ogni qual volta ci sarà una specifica News!\n\n'
         + `${newsEmoji} per essere informato dalle nostre News\n`
-        + `${twitterNewsEmoji} per essere informato ad ogni News di Twitter\ n`);
+        + `${twitterNewsEmoji} per essere informato ad ogni News di Twitter\n`);
 
-        message.channel.send(embed);
-        // let messageEmbed = await message.channel.send(embed);
-        // messageEmbed.react(newsEmoji);
-        // messageEmbed.react(twitterNewsEmoji);
+        // message.channel.send(embed);
+
+        const messageEmbed = await message.channel.send(embed);
+        messageEmbed.react(newsEmoji);
+        messageEmbed.react(twitterNewsEmoji);
     }
 }
