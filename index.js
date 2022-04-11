@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+// const client = new Discord.Client();
+const client = new Discord.Client( { partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'USER']})
 const config = require('./config.json');
 const fs = require('fs');
+// const { channel } = require('diagnostics_channel');
 
 client.on('ready', () => {
     console.log('RCI | Utility is Online')
@@ -55,20 +57,3 @@ client.on('message', message => {
 });
 
 client.login(config.token)
-
-/**----------------------
- *  JSON WRITING TEST
- *------------------------**/
-
-// let reactionMessages = {
-//   messages: [],
-// };
-
-// reactionMessages.messages.push({messageOne: 574389257849});
-
-// console.log(reactionMessages);
-
-// const json = JSON.stringify(reactionMessages);
-// fs.writeFile('reactionMessages.json', json, function(err, result) {
-//   if (err) console.log('error', err);
-// });

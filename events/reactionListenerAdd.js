@@ -1,16 +1,25 @@
-// const Discord = require('discord.js');
-// const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
-const reactionRoleFile = require("../commands/createReactionRole.js");
+const fs = require('fs');
 
 module.exports = {
   name: "messageReactionAdd",
   once: false,
-  async execute(reaction, user, client, Discord) {
-    console.log('reaction found');
-    // if (message.id === ''); // pass the message
-    if (user.bot) return;
-    if (reaction.emoji.name === reactionRoleFile.reactionEmoji) {
-      reaction.message.guild.members.cache.get(user.id).roles.add(reactionRoleFile.role);
+  async execute(reaction, user, message, client, Discord) {
+    try {
+      fs.readFile("reactionMessages.json", async (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          if (user.bot) return;
+          data = JSON.parse(data);
+          if (reaction.partial) await reaction.fetch();
+          if (reaction.message.id === data.messages[0] && reaction.emoji.name === data.messages[1]) {
+            const role = reaction.message.guild.roles.cache.find(role => role.name === data.messages[2]);
+            reaction.message.guild.members.cache.get(user.id).roles.add(role);
+          }
+        }
+      });
+    } catch (error) {
+      console.log(error);
     }
   },
 };
