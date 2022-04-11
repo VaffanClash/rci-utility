@@ -46,8 +46,6 @@ client.on('message', message => {
     return message.channel.send(reply);
   }
 
-  
-
   try {
     command.execute(message, args);
   } catch (err) {
@@ -57,3 +55,20 @@ client.on('message', message => {
 });
 
 client.login(config.token)
+
+/**----------------------
+ *  JSON WRITING TEST
+ *------------------------**/
+
+// let reactionMessages = {
+//   messages: [],
+// };
+
+// reactionMessages.messages.push({messageOne: 574389257849});
+
+// console.log(reactionMessages);
+
+// const json = JSON.stringify(reactionMessages);
+// fs.writeFile('reactionMessages.json', json, function(err, result) {
+//   if (err) console.log('error', err);
+// });
