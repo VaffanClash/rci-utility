@@ -77,7 +77,9 @@ module.exports = {
 
           // Sending data to JSON
           const id = Math.floor(Math.random() * 10000);
+          // reactionMessages.messages.push({ [id]: [messageEmbed.id, reactionEmoji, role.name] });
           reactionMessages.messages.push({ [id]: [messageEmbed.id, reactionEmoji, role.name] });
+
           console.log('reactionMessages: ', reactionMessages);
 
           const stringifiedData = JSON.stringify(reactionMessages);

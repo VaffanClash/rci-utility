@@ -23,7 +23,6 @@ module.exports = {
               reaction.message.guild.members.cache.get(user.id).roles.add(role);
             }
           }
-          
         }
       });
     } catch (error) {

@@ -38,13 +38,18 @@ module.exports = {
         console.log(err);
       } else {
         const parsedData = JSON.parse(data);
-        const newData = parsedData.messages;
+        // const newData = parsedData.messages;
+        const newData = parsedData;
         // console.log(newData);
 
         const id = Math.floor(Math.random() * 10000);
-        newData.push({ [id]: [messageToEdit, reaction, role] });
+        newData.messages.push({ [id]: [messageToEdit, reaction, role] });
 
-        console.log(newData);
+        const stringifiedData = JSON.stringify(newData);
+
+        fs.writeFile('./reactionMessages.json', stringifiedData, function() {
+          if (err) console.log(err);
+        });
 
       }
     })
