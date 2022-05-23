@@ -1,12 +1,7 @@
 const Discord = require('discord.js');
-
-// const myIntents = new Intents();
-// myIntents.add(Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS);
-
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'USER'] })
 const config = require('./config.json');
 const fs = require('fs');
-// const { channel } = require('diagnostics_channel');
 
 client.on('ready', () => {
     console.log('RCI | Utility is Online')
@@ -42,7 +37,7 @@ client.on('message', message => {
   const command = client.commands.get(commandName);
 
   if (command.args && !args.length) {
-    let reply = "You didn't provive any arguments."
+    let reply = "You didn't provide any arguments."
 
     if (command.usage) {
       reply += `\nThe proper usage would be: \`${config.prefix}${command.name} ${command.usage}\``;
