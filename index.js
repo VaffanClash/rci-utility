@@ -28,6 +28,7 @@ for (const file of commandFiles) {
 
 client.on('message', message => {
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  if (!message.member.hasPermission('administrator')) return;
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();

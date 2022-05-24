@@ -12,6 +12,8 @@ module.exports = {
             { name: 'Commands:', value: '\u200B' },
             { name: '!help', value: 'Shows this message.', inline: true },
             { name: '!clear <number>', value: 'Deletes a given number of messages.', inline: true },
+            { name: '!createreactionrole <role> <reaction> <description>', value: 'Creates a reaction role message', inline: false },
+            { name: '!editreactionrole <message id> <role> <reaction> <description>', value: 'Edits an already existing reaction role message (selected with the id)', inline: false },
 
             { name: '\u200B', value: '\u200B'},
 
