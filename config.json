@@ -1,6 +1,1 @@
-{
-    "token": "ODEwOTE2NDk5MzI0OTI4MDAw.YCqm1w.M9vbj0-NMoNvziY4VDndIkfDcok",
-    "prefix": "!",
-    "bannedWords": ["porco dio", "porca madonna"],
-    "logchannel": "784051588125425686"
-}
+{"token":"ODEwOTE2NDk5MzI0OTI4MDAw.YCqm1w.M9vbj0-NMoNvziY4VDndIkfDcok","prefix":"!","bannedWords":["porco dio","porca madonna"],"logchannel":"854748678903693362","quitchannel":"854748678903693362"}

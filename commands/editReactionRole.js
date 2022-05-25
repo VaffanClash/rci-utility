@@ -4,8 +4,7 @@ const fs = require("fs");
 module.exports = {
   name: "editreactionrole",
   args: true,
-  usage:
-    "<ID of the message to edit> <new role> <new reaction> <field description>",
+  usage: "<ID of the message to edit> <new role> <new reaction> <field description>",
   execute(message, args) {
     const Discord = require("discord.js");
     const client = new Discord.Client();
