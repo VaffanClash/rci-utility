@@ -6,6 +6,6 @@ module.exports = {
     name: "guildMemberRemove",
     once: false,
     execute(member, client) {
-        client.channels.cache.get(config.quitchannel).send(`${member} left the server`);
+        client.channels.cache.get(config.quitchannel).send(`**${member.user.tag}** left the server (${member})`);
     }
 }

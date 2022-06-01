@@ -18,5 +18,3 @@ module.exports = {
     client.channels.cache.get(config.logchannel).send(embed);
   },
 };
-
-// TODO check if the message got deleted from the author; if not, log it in the Embed
